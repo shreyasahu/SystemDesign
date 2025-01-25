@@ -1,16 +1,17 @@
 package cache;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class InMemoryCache<K, V> implements CustomCache<K, V> {
     private final int capacity;
     private final Map<K, V> storage;
-    private EvictionPolicy<K> evictionPolicy;
+    private final EvictionPolicy<K> evictionPolicy;
 
 
-    public InMemoryCache(int capacity, Map<K, V> storage, EvictionPolicy<K> evictionPolicy) {
+    public InMemoryCache(int capacity, EvictionPolicy<K> evictionPolicy) {
         this.capacity = capacity;
-        this.storage = storage;
+        this.storage = new HashMap<>();
         this.evictionPolicy = evictionPolicy;
     }
 
