@@ -9,8 +9,8 @@ import java.util.Objects;
 
 public class URLShortner {
     /*storage to store long url and user info*/
-    private Map<String, String> urlMap = new HashMap<>();
-    private Map<String, String> userMap = new HashMap<>();
+    private final Map<String, String> urlMap = new HashMap<>();
+    private final Map<String, String> userMap = new HashMap<>();
 
     public String shortenUrl(String longUrl, String userId) {
         String token = generateTokenUsingHashAlgo(longUrl);
